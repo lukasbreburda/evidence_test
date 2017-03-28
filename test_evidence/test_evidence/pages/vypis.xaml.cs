@@ -16,18 +16,18 @@ using System.Windows.Shapes;
 namespace test_evidence
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for vypis.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class vypis : Page
     {
-        public static Frame framePublic; //vytvoří veřejný frame 
-
-        public MainWindow()
+        public vypis()
         {
             InitializeComponent();
-            framePublic = frame; //definice veřejného framu na klasický 
+        }
 
-            MainWindow.framePublic.Source = new Uri("pages/vypis.xaml", UriKind.Relative); //uprava source framu na danou Page
+        private void new_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.framePublic.Source = new Uri("pages/news.xaml", UriKind.Relative); //změna source Page
         }
     }
 }
