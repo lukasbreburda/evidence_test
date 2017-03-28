@@ -14,7 +14,7 @@ namespace test_evidence.classes
         public string znacka { get; set; }
         public string model { get; set; }
         public int objem { get; set; }
-        public int výkon { get; set; }
+        public int vykon { get; set; }
         public int rok_vyroby { get; set; }
         public int stav_kilometru { get; set; }
        

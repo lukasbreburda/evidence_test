@@ -18,7 +18,8 @@
             <ColumnDefinition Width="9*"/>
             <ColumnDefinition Width="16*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="add" Content="Přidat" Grid.Column="1" HorizontalAlignment="Left" Margin="295,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="138"  Height="43" Click="add_Click"/>
+        
+        <Button x:Name="pridat" Content="Přidat" Grid.Column="1" HorizontalAlignment="Left" Margin="295,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="138"  Height="43" Click="pridat_Click"/>
         <Button x:Name="back" Content="Zpět" HorizontalAlignment="Left" Margin="65,10,0,0" VerticalAlignment="Top" Width="138"  Height="43" Click="back_Click"/>
 
         <Label x:Name="znacka" Content="Značka:" HorizontalAlignment="Left" Margin="206,51.2,0,0" Grid.Row="1" FontSize="18" VerticalAlignment="Top" Width="72" Height="37"/>

@@ -22,12 +22,14 @@ namespace test_evidence.pages
         public news()
         {
             InitializeComponent();
+
+           
         }
 
        
-        private void add_Click(object sender, RoutedEventArgs e)
+        private void pridat_Click(object sender, RoutedEventArgs e)
         {
-
+            add();
             MainWindow.framePublic.Source = new Uri("pages/vypis.xaml", UriKind.Relative); //změna source Page
 
         }
@@ -37,6 +39,21 @@ namespace test_evidence.pages
             clear_textbox();
             MainWindow.framePublic.Source = new Uri("pages/vypis.xaml", UriKind.Relative); //změna source Page
         }
+
+        private static database _data;
+        public static database Data
+        {
+            get
+            {
+                if (_data == null)
+                {
+                    var fileHelper = new FileHelper();
+                    _data = new database(fileHelper.GetLocalFilePath("autaSQLite.db3"));
+                }
+                return _data;
+            }
+        }
+
         public void clear_textbox()
         {
             zn.Text = "";
@@ -51,6 +68,15 @@ namespace test_evidence.pages
         {
             auto item = new auto();
             item.znacka = zn.Text;
+            item.model = mo.Text;
+            item.objem = Int32.Parse(ob.Text);
+            item.vykon = Int32.Parse(vy.Text);
+            item.rok_vyroby = Int32.Parse(ro.Text);
+            item.stav_kilometru = Int32.Parse(ki.Text);
+
+            Data.SaveItemAsync(item);
+            vypis.itemsFromDb.Add(item);
+
 
         }
     }
