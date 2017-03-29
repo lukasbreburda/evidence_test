@@ -18,7 +18,7 @@
             <RowDefinition Height="259*"/>
         </Grid.RowDefinitions>
         <Button x:Name="new" Grid.Column="0" Grid.Row="0" Content="Nové auto" HorizontalAlignment="Left" Margin="110,19,0,0" VerticalAlignment="Top" Width="138"  Height="43" Click="new_Click"/>
-        <ListView x:Name="ListView" HorizontalAlignment="Left" Height="418" Margin="73,10.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="664" Grid.ColumnSpan="2">
+        <ListView x:Name="ListView" HorizontalAlignment="Left" Height="418" Margin="73,10.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="664" Grid.ColumnSpan="2" SelectionChanged="ListView_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

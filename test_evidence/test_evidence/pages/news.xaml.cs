@@ -19,11 +19,29 @@ namespace test_evidence.pages
   
     public partial class news : Page
     {
+        int ID_dat;
         public news()
         {
             InitializeComponent();
+            edit.Visibility = Visibility.Collapsed;
+            smazat.Visibility = Visibility.Collapsed;
 
-           
+            if (vypis.prechod == 1)
+            {
+                zn.Text = MainWindow.todo.znacka;
+                mo.Text = MainWindow.todo.model;
+                ro.Text = MainWindow.todo.rok_vyroby.ToString();
+                ki.Text = MainWindow.todo.stav_kilometru.ToString();
+                vy.Text = MainWindow.todo.vykon.ToString();
+                ob.Text = MainWindow.todo.objem.ToString();
+                ID_dat = MainWindow.todo.ID;
+                pridat.Visibility = Visibility.Collapsed;
+                edit.Visibility = Visibility.Visible;
+                smazat.Visibility = Visibility.Visible;
+                vypis.prechod = 0;
+            }
+
+          
         }
 
        
@@ -78,6 +96,27 @@ namespace test_evidence.pages
             vypis.itemsFromDb.Add(item);
 
 
+        }
+
+        private void smazat_Click(object sender, RoutedEventArgs e)
+        {
+            delete();
+            MainWindow.framePublic.Source = new Uri("pages/vypis.xaml", UriKind.Relative); //změna source Page
+
+        }
+
+        private void edit_Click(object sender, RoutedEventArgs e)
+        {
+            
+            add();
+            delete();
+            MainWindow.framePublic.Source = new Uri("pages/vypis.xaml", UriKind.Relative); //změna source Page
+        }
+
+        public void delete()
+        {
+            Data.DeleteItemAsync(ID_dat);
+            clear_textbox();
         }
     }
 }

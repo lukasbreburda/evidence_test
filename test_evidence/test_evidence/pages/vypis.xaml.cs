@@ -24,6 +24,8 @@ namespace test_evidence
     /// </summary>
     public partial class vypis : Page
     {
+       public static int prechod = 0;
+        public static int id_cole;
       public static ObservableCollection<auto> itemsFromDb;
 
         public vypis()
@@ -48,23 +50,14 @@ namespace test_evidence
             ListView.ItemsSource = itemsFromDb;
         }
 
-        public void ToDoItemsListView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (ListView.SelectedItems.Count > 0)
-            {
-
-                auto todoItem = (auto)ListView.SelectedItems[0];
-
-
-            }
-
-        }
+      
 
         private void new_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.framePublic.Source = new Uri("pages/news.xaml", UriKind.Relative); //změna source Page
         }
         private static database _data;
+
         public static database Data
         {
             get
@@ -75,6 +68,21 @@ namespace test_evidence
                     _data = new database(fileHelper.GetLocalFilePath("autaSQLite.db3"));
                 }
                 return _data;
+            }
+        }
+
+        public void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ListView.SelectedItems.Count > 0)
+            {
+
+                auto todoItem = (auto)ListView.SelectedItems[0];
+                MainWindow.todo = todoItem;
+                id_cole = itemsFromDb.IndexOf(todoItem);
+                prechod = 1;
+                MainWindow.framePublic.Source = new Uri("pages/news.xaml", UriKind.Relative); //změna source Page
+                
+
             }
         }
     }
