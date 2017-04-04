@@ -22,7 +22,7 @@ namespace test_evidence
     public partial class MainWindow : Window
     {
         public static Frame framePublic; //vytvoří veřejný frame 
-        public static auto todo;
+        //public static auto todo;
         public MainWindow()
         {
             InitializeComponent();

@@ -77,10 +77,12 @@ namespace test_evidence
             {
 
                 auto todoItem = (auto)ListView.SelectedItems[0];
-                MainWindow.todo = todoItem;
+               // MainWindow.todo = todoItem;
                 id_cole = itemsFromDb.IndexOf(todoItem);
                 prechod = 1;
-                MainWindow.framePublic.Source = new Uri("pages/news.xaml", UriKind.Relative); //změna source Page
+                MainWindow.framePublic.Navigate(new news(todoItem));
+
+              //  MainWindow.framePublic.Source = new Uri("pages/news.xaml", UriKind.Relative); //změna source Page
                 
 
             }

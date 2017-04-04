@@ -27,6 +27,10 @@ namespace test_evidence.classes
         {
             return Database.QueryAsync<auto>("SELECT * FROM [auto] ");
         }
+        public Task<List<auto>> GetItemssearch(int item)
+        {
+            return Database.QueryAsync<auto>("SELECT * FROM [auto] WHERE [ISBN] = " + item); 
+        }
 
 
         public Task<int> SaveItemAsync(auto item)

@@ -32,10 +32,11 @@
         <Label x:Name="kilometry" Content="Stav tachometru:" HorizontalAlignment="Left" Margin="127,357.2,0,0" Grid.Row="1" FontSize="18" VerticalAlignment="Top" Width="151" Height="37"/>
         <TextBox x:Name="zn" Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="10,51.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
         <TextBox x:Name="mo" Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="10,114.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="192"/>
-        <TextBox x:Name="ob" Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="10,170.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132"/>
-        <TextBox x:Name="vy" Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="10,231.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132"/>
-        <TextBox x:Name="ro" Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="10,288.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132"/>
-        <TextBox x:Name="ki" Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="10,353.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="161"/>
+        <TextBox x:Name="ob" PreviewTextInput="num" Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="10,170.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132"/>
+        <TextBox x:Name="vy" PreviewTextInput="num"  Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="10,231.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132"/>
+        <TextBox x:Name="ro" PreviewTextInput="num"  Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="10,288.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132"/>
+        <TextBox x:Name="ki" PreviewTextInput="num" Grid.Column="1" HorizontalAlignment="Left" Height="41" Margin="10,353.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="161"/>
+        <Label x:Name="error" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="83,27,0,0" VerticalAlignment="Top" Width="119"/>
 
 
     </Grid>
